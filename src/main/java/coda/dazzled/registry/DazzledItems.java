@@ -11,5 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class DazzledItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Dazzled.MOD_ID);
 
-    public static final RegistryObject<Item> OGRE_SPAWN_EGG = ITEMS.register("ogre_spawn_egg", () -> new ForgeSpawnEggItem(DazzledEntities.OGRE, 0x00000, 0x00FF00, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> OGRE_SPAWN_EGG = ITEMS.register("ogre_spawn_egg", () -> new ForgeSpawnEggItem(DazzledEntities.OGRE, 0x534a2b, 0x3a291e, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> GNOME_SPAWN_EGG = ITEMS.register("gnome_spawn_egg", () -> new ForgeSpawnEggItem(DazzledEntities.GNOME, 0x464c9d, 0x6d3637, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

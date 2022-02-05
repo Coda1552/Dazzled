@@ -1,6 +1,7 @@
 package coda.dazzled.client;
 
 import coda.dazzled.Dazzled;
+import coda.dazzled.client.render.GnomeRenderer;
 import coda.dazzled.client.render.OgreRenderer;
 import coda.dazzled.registry.DazzledEntities;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -15,5 +16,6 @@ public class ClientEvents {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(DazzledEntities.OGRE.get(), OgreRenderer::new);
+        EntityRenderers.register(DazzledEntities.GNOME.get(), GnomeRenderer::new);
     }
 }

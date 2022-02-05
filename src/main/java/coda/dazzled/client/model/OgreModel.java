@@ -3,6 +3,8 @@ package coda.dazzled.client.model;
 import coda.dazzled.Dazzled;
 import coda.dazzled.common.entities.OgreEntity;
 import net.minecraft.resources.ResourceLocation;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedTickingGeoModel;
 
 public class OgreModel extends AnimatedTickingGeoModel<OgreEntity> {
@@ -20,5 +22,17 @@ public class OgreModel extends AnimatedTickingGeoModel<OgreEntity> {
     @Override
     public ResourceLocation getAnimationFileLocation(OgreEntity animatable) {
         return new ResourceLocation(Dazzled.MOD_ID, "animations/ogre.animation.json");
+    }
+
+    @Override
+    public void setLivingAnimations(OgreEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
+        super.setLivingAnimations(entity, uniqueID, customPredicate);
+
+        IBone body = this.getAnimationProcessor().getBone("body");
+
+        body.setScaleX(1.35F);
+        body.setScaleY(1.35F);
+        body.setScaleZ(1.35F);
+        body.setPositionY(4.5F);
     }
 }

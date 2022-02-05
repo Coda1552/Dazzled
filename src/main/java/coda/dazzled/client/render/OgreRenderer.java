@@ -9,6 +9,7 @@ public class OgreRenderer extends GeoEntityRenderer<OgreEntity> {
 
     public OgreRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new OgreModel());
-        this.shadowRadius = 0.95F;
+        this.shadowRadius = 0.8F;
     }
+
 }

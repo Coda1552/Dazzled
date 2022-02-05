@@ -1,7 +1,9 @@
 package coda.dazzled;
 
+import coda.dazzled.common.entities.GnomeEntity;
 import coda.dazzled.common.entities.OgreEntity;
 import coda.dazzled.registry.DazzledEntities;
+import coda.dazzled.registry.DazzledItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,10 +21,14 @@ public class Dazzled {
 
         bus.addListener(this::registerEntityAttributes);
 
+        DazzledItems.ITEMS.register(bus);
+        DazzledEntities.ENTITIES.register(bus);
+
         GeckoLib.initialize();
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(DazzledEntities.OGRE.get(), OgreEntity.createAttributes().build());
+        event.put(DazzledEntities.GNOME.get(), GnomeEntity.createAttributes().build());
     }
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "minecraft:block/dark_oak_log_top",
+    "bottom": "minecraft:block/dark_oak_log_top",
+    "side": "overtherainbow:block/gnome_home_side",
+    "front": "overtherainbow:block/gnome_home_front"
+  }
+}

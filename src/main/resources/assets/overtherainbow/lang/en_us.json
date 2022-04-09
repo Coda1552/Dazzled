@@ -1,0 +1,11 @@
+{
+  "itemGroup.overtherainbow": "Over The Rainbow",
+
+  "block.overtherainbow.gnome_home": "Gnome Home",
+
+  "item.overtherainbow.ogre_spawn_egg": "Ogre Spawn Egg",
+  "item.overtherainbow.gnome_spawn_egg": "Gnome Spawn Egg",
+
+  "entity.overtherainbow.ogre": "Ogre",
+  "entity.overtherainbow.gnome": "Gnome"
+}

@@ -28,11 +28,11 @@ public class OgreModel extends AnimatedTickingGeoModel<OgreEntity> {
     public void setLivingAnimations(OgreEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
         super.setLivingAnimations(entity, uniqueID, customPredicate);
 
-        IBone body = this.getAnimationProcessor().getBone("body");
+        IBone root = this.getAnimationProcessor().getBone("root");
 
-        body.setScaleX(1.35F);
-        body.setScaleY(1.35F);
-        body.setScaleZ(1.35F);
-        body.setPositionY(4.5F);
+        root.setScaleX(1.35F);
+        root.setScaleY(1.35F);
+        root.setScaleZ(1.35F);
+        root.setPositionY(4.5F);
     }
 }

@@ -5,7 +5,7 @@ license="All rights reserved"
 modId="overtherainbow" #mandatory
 version="${file.jarVersion}" #mandatory
 displayName="Over The Rainbow" #mandatory
-#logoFile="dazzled.png" #optional
+#logoFile="overtherainbow.png" #optional
 credits="Coda, Ninni" #optional
 description='''
 Fantastical creatures, big and small.'''

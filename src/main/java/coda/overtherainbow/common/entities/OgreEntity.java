@@ -7,12 +7,14 @@ import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.IAnimationTickable;
 import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -35,12 +37,24 @@ public class OgreEntity extends PathfinderMob implements IAnimatable, IAnimation
     }
 
     @Override
+    public boolean canBeLeashed(Player p_21418_) {
+        return false;
+    }
+
+    @Override
     public ItemStack getPickedResult(HitResult target) {
         return new ItemStack(OTRItems.OGRE_SPAWN_EGG.get());
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        return PlayState.CONTINUE;
+        if (event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ogre.walk", true));
+            return PlayState.CONTINUE;
+        }
+        else {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ogre.idle", true));
+            return PlayState.CONTINUE;
+        }
     }
 
     @Override

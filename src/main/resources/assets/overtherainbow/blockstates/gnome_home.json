@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "overtherainbow:block/gnome_home",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "overtherainbow:block/gnome_home"
+    },
+    "facing=south": {
+      "model": "overtherainbow:block/gnome_home",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "overtherainbow:block/gnome_home",
+      "y": 270
+    }
+  }
+}

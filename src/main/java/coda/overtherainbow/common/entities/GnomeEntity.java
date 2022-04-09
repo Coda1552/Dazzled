@@ -6,7 +6,9 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
@@ -28,11 +30,17 @@ public class GnomeEntity extends PathfinderMob implements IAnimatable, IAnimatio
 
     @Override
     protected void registerGoals() {
+        this.goalSelector.addGoal(0, new PanicGoal(this, 1.0D));
         this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1.0D));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.3D);
+    }
+
+    @Override
+    public boolean canBeLeashed(Player p_21418_) {
+        return false;
     }
 
     @Override

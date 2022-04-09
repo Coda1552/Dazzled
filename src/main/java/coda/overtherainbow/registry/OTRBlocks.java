@@ -1,6 +1,7 @@
 package coda.overtherainbow.registry;
 
 import coda.overtherainbow.OverTheRainbow;
+import coda.overtherainbow.common.blocks.GnomeHomeBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +18,7 @@ import java.util.function.Supplier;
 public class OTRBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, OverTheRainbow.MOD_ID);
 
-    public static final RegistryObject<Block> GNOME_HOME = register("gnome_home", () -> new LoomBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1.5F).lightLevel(p -> 15)), new Item.Properties().tab(OverTheRainbow.GROUP));
+    public static final RegistryObject<Block> GNOME_HOME = register("gnome_home", () -> new GnomeHomeBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(1.5F).lightLevel(p -> 15)), new Item.Properties().tab(OverTheRainbow.GROUP));
 
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {

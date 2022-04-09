@@ -1,7 +1,7 @@
-package coda.dazzled.client.render;
+package coda.overtherainbow.client.render;
 
-import coda.dazzled.client.model.GnomeModel;
-import coda.dazzled.common.entities.GnomeEntity;
+import coda.overtherainbow.client.model.GnomeModel;
+import coda.overtherainbow.common.entities.GnomeEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 

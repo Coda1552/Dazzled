@@ -1,6 +1,6 @@
-package coda.dazzled.common.entities;
+package coda.overtherainbow.common.entities;
 
-import coda.dazzled.registry.DazzledItems;
+import coda.overtherainbow.registry.OTRItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
@@ -13,17 +13,16 @@ import net.minecraft.world.phys.HitResult;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.IAnimationTickable;
 import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class GnomeEntity extends PathfinderMob implements IAnimatable, IAnimationTickable {
+public class OgreEntity extends PathfinderMob implements IAnimatable, IAnimationTickable {
     private final AnimationFactory factory = new AnimationFactory(this);
 
-    public GnomeEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
-        super(p_21683_, p_21684_);
+    public OgreEntity(EntityType<? extends PathfinderMob> p_30341_, Level level) {
+        super(p_30341_, level);
     }
 
     @Override
@@ -32,23 +31,16 @@ public class GnomeEntity extends PathfinderMob implements IAnimatable, IAnimatio
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.MOVEMENT_SPEED, 0.3D);
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 60.0D).add(Attributes.MOVEMENT_SPEED, 0.2D);
     }
 
     @Override
     public ItemStack getPickedResult(HitResult target) {
-        return new ItemStack(DazzledItems.GNOME_SPAWN_EGG.get());
+        return new ItemStack(OTRItems.OGRE_SPAWN_EGG.get());
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gnome.walk", true));
-            return PlayState.CONTINUE;
-        }
-        else {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.gnome.idle", true));
-            return PlayState.CONTINUE;
-        }
+        return PlayState.CONTINUE;
     }
 
     @Override

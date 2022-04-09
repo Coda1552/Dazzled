@@ -1,7 +1,7 @@
-package coda.dazzled.client.model;
+package coda.overtherainbow.client.model;
 
-import coda.dazzled.Dazzled;
-import coda.dazzled.common.entities.OgreEntity;
+import coda.overtherainbow.OverTheRainbow;
+import coda.overtherainbow.common.entities.OgreEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
@@ -11,17 +11,17 @@ public class OgreModel extends AnimatedTickingGeoModel<OgreEntity> {
 
     @Override
     public ResourceLocation getModelLocation(OgreEntity object) {
-        return new ResourceLocation(Dazzled.MOD_ID, "geo/ogre.geo.json");
+        return new ResourceLocation(OverTheRainbow.MOD_ID, "geo/ogre.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureLocation(OgreEntity object) {
-        return new ResourceLocation(Dazzled.MOD_ID, "textures/entity/ogre.png");
+        return new ResourceLocation(OverTheRainbow.MOD_ID, "textures/entity/ogre.png");
     }
 
     @Override
     public ResourceLocation getAnimationFileLocation(OgreEntity animatable) {
-        return new ResourceLocation(Dazzled.MOD_ID, "animations/ogre.animation.json");
+        return new ResourceLocation(OverTheRainbow.MOD_ID, "animations/ogre.animation.json");
     }
 
     @Override

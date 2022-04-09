@@ -1,9 +1,9 @@
-package coda.dazzled;
+package coda.overtherainbow;
 
-import coda.dazzled.common.entities.GnomeEntity;
-import coda.dazzled.common.entities.OgreEntity;
-import coda.dazzled.registry.DazzledEntities;
-import coda.dazzled.registry.DazzledItems;
+import coda.overtherainbow.common.entities.GnomeEntity;
+import coda.overtherainbow.common.entities.OgreEntity;
+import coda.overtherainbow.registry.OTREntities;
+import coda.overtherainbow.registry.OTRItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,24 +11,24 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib3.GeckoLib;
 
-@Mod(Dazzled.MOD_ID)
-public class Dazzled {
-    public static final String MOD_ID = "dazzled";
+@Mod(OverTheRainbow.MOD_ID)
+public class OverTheRainbow {
+    public static final String MOD_ID = "overtherainbow";
 
-    public Dazzled() {
+    public OverTheRainbow() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 
         bus.addListener(this::registerEntityAttributes);
 
-        DazzledItems.ITEMS.register(bus);
-        DazzledEntities.ENTITIES.register(bus);
+        OTRItems.ITEMS.register(bus);
+        OTREntities.ENTITIES.register(bus);
 
         GeckoLib.initialize();
     }
 
     private void registerEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(DazzledEntities.OGRE.get(), OgreEntity.createAttributes().build());
-        event.put(DazzledEntities.GNOME.get(), GnomeEntity.createAttributes().build());
+        event.put(OTREntities.OGRE.get(), OgreEntity.createAttributes().build());
+        event.put(OTREntities.GNOME.get(), GnomeEntity.createAttributes().build());
     }
 }
